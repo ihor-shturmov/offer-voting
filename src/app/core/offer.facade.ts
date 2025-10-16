@@ -1,10 +1,10 @@
-import { Injectable, computed, signal } from '@angular/core';
+import { Injectable, computed, signal, inject } from '@angular/core';
 import type { Offer } from './offer.model';
 import { OfferStore } from './offer.store';
 
 @Injectable({ providedIn: 'root' })
 export class OfferFacade {
-  constructor(private readonly store: OfferStore) {}
+  private readonly store = inject(OfferStore);
 
   get offers() {
     return this.store.offers.asReadonly();
