@@ -6,6 +6,7 @@ import { RoutesPaths } from '../routes';
 import { UpvoteButtonComponent } from './upvote-button.component';
 import { DownvoteButtonComponent } from './downvote-button.component';
 import { OfferInfoComponent } from './offer-info.component';
+import { PurchaseButtonComponent } from './purchase-button.component';
 
 @Component({
   standalone: true,
@@ -16,7 +17,8 @@ import { OfferInfoComponent } from './offer-info.component';
     NgOptimizedImage,
     UpvoteButtonComponent,
     DownvoteButtonComponent,
-    OfferInfoComponent,
+  OfferInfoComponent,
+  PurchaseButtonComponent,
   ],
   template: `
     <article class="rounded border transition hover:shadow p-3 flex flex-col">
@@ -36,6 +38,7 @@ import { OfferInfoComponent } from './offer-info.component';
       <div class="mt-3 flex gap-2">
         <app-upvote-button (clicked)="upvote.emit(offer().id)" />
         <app-downvote-button (clicked)="downvote.emit(offer().id)" />
+        <app-purchase-button [href]="offer().purchaseUrl" />
       </div>
     </article>
   `,

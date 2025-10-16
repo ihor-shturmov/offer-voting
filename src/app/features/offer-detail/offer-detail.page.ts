@@ -7,6 +7,7 @@ import { RoutesPaths } from '../../shared/routes';
 import { UpvoteButtonComponent } from '../../shared/ui/upvote-button.component';
 import { DownvoteButtonComponent } from '../../shared/ui/downvote-button.component';
 import { OfferInfoComponent } from '../../shared/ui/offer-info.component';
+import { PurchaseButtonComponent } from '../../shared/ui/purchase-button.component';
 
 @Component({
   standalone: true,
@@ -18,7 +19,8 @@ import { OfferInfoComponent } from '../../shared/ui/offer-info.component';
     PageContainerComponent,
     UpvoteButtonComponent,
     DownvoteButtonComponent,
-    OfferInfoComponent,
+  OfferInfoComponent,
+  PurchaseButtonComponent,
   ],
   template: `
     <app-page-container>
@@ -41,6 +43,7 @@ import { OfferInfoComponent } from '../../shared/ui/offer-info.component';
             <div class="mt-4 flex gap-2">
               <app-upvote-button (clicked)="upvote()" />
               <app-downvote-button (clicked)="downvote()" />
+              <app-purchase-button [href]="current()!.purchaseUrl" />
             </div>
           </div>
         </div>
