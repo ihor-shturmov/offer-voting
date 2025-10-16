@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'tailwindcss';
+
+/* Light background for the whole app (approx Tailwind gray-50 and gray-900) */
+body {
+  background-color: #f9fafb;
+  color: #111827;
+}
